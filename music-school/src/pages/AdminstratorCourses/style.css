@@ -1,0 +1,357 @@
+.adminstrator-courses {
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.adminstrator-courses .overlap-group-wrapper {
+  background-color: var(--coloursbackgroundbody);
+  width: 100%;
+}
+
+.adminstrator-courses .overlap-group {
+  position: relative;
+}
+
+.adminstrator-courses .extended-FAB {
+  align-items: center;
+  background-color: var(--colourssecondary-200);
+  border-radius: 8px;
+  box-shadow: var(--m3-elevation-light-3);
+  display: inline-flex;
+  justify-content: center;
+  left: 1155px;
+  overflow: hidden;
+  position: absolute;
+  top: 619px;
+}
+
+.adminstrator-courses .state-layer {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 12px;
+  justify-content: center;
+  padding: 16px 20px 16px 16px;
+  position: relative;
+}
+
+.adminstrator-courses .mdi-plus {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.adminstrator-courses .label-text {
+  color: var(--colourstextlightprimary);
+  font-family: var(--text-button-regular-font-family);
+  font-size: var(--text-button-regular-font-size);
+  font-style: var(--text-button-regular-font-style);
+  font-weight: var(--text-button-regular-font-weight);
+  letter-spacing: var(--text-button-regular-letter-spacing);
+  line-height: var(--text-button-regular-line-height);
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.adminstrator-courses .frame-3 {
+  align-items: flex-start;
+  display: flex;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1380px;
+}
+
+.adminstrator-courses .body {
+  align-items: flex-start;
+  display: flex;
+  margin-right: -96px;
+  position: relative;
+  width: 1380px;
+}
+
+.adminstrator-courses .frame-4 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px 36px;
+  position: relative;
+  width: 1284px;
+}
+
+.adminstrator-courses .div-wrapper {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.adminstrator-courses .text-wrapper-4 {
+  color: var(--colourstextlightsecondary);
+  font-family: var(--text-header-5-font-family);
+  font-size: var(--text-header-5-font-size);
+  font-style: var(--text-header-5-font-style);
+  font-weight: var(--text-header-5-font-weight);
+  letter-spacing: var(--text-header-5-letter-spacing);
+  line-height: var(--text-header-5-line-height);
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.adminstrator-courses .frame-5 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.adminstrator-courses .frame-6 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.adminstrator-courses .course-list {
+  color: var(--colourstextlightsecondary);
+  font-family: var(--text-subtitle-2-font-family);
+  font-size: var(--text-subtitle-2-font-size);
+  font-style: var(--text-subtitle-2-font-style);
+  font-weight: var(--text-subtitle-2-font-weight);
+  letter-spacing: var(--text-subtitle-2-letter-spacing);
+  line-height: var(--text-subtitle-2-line-height);
+  position: relative;
+  width: 208px;
+}
+
+.adminstrator-courses .outline-input {
+  align-items: center;
+  background-color: var(--coloursgraywhite);
+  border: 1px solid;
+  border-color: var(--coloursgray-200);
+  border-radius: 4px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  position: relative;
+  width: 223px;
+}
+
+.adminstrator-courses .mdi-magnify {
+  height: 16px;
+  position: relative;
+  width: 16px;
+}
+
+.adminstrator-courses .text-wrapper-5 {
+  color: var(--colourstextlightsecondary);
+  flex: 1;
+  font-family: var(--text-body-2-font-family);
+  font-size: var(--text-body-2-font-size);
+  font-style: var(--text-body-2-font-style);
+  font-weight: var(--text-body-2-font-weight);
+  letter-spacing: var(--text-body-2-letter-spacing);
+  line-height: var(--text-body-2-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.adminstrator-courses .table {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: var(--coloursbackgroundpanel);
+  border-radius: 6px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  position: relative;
+  width: 100%;
+}
+
+.adminstrator-courses .table-2 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.adminstrator-courses .header {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--coloursgray-300);
+  border-left-style: none;
+  border-right-style: none;
+  border-top-style: none;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 8px 0px 16px;
+  position: relative;
+  width: 100%;
+}
+
+.adminstrator-courses .div-2 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  justify-content: space-between;
+  position: relative;
+}
+
+.adminstrator-courses .text-wrapper-6 {
+  color: var(--colourstextlightprimary);
+  flex: 1;
+  font-family: var(--text-body-1-font-family);
+  font-size: var(--text-body-1-font-size);
+  font-style: var(--text-body-1-font-style);
+  font-weight: var(--text-body-1-font-weight);
+  letter-spacing: var(--text-body-1-letter-spacing);
+  line-height: var(--text-body-1-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.adminstrator-courses .text-wrapper-7 {
+  color: var(--colourstextlightprimary);
+  font-family: "Nunito Sans", Helvetica;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.adminstrator-courses .body-2 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  padding: 4px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.adminstrator-courses .row {
+  align-items: flex-start;
+  align-self: stretch;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--coloursgray-200);
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 8px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.adminstrator-courses .chip-wrapper {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 10px;
+  height: 24px;
+  justify-content: space-around;
+  position: relative;
+}
+
+.adminstrator-courses .chip {
+  align-items: flex-start;
+  background-color: var(--coloursprimary-200);
+  border-radius: 4px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 4px 16px;
+  position: relative;
+}
+
+.adminstrator-courses .text-wrapper-8 {
+  color: var(--colourstextlightsecondary);
+  font-family: var(--text-body-2-font-family);
+  font-size: var(--text-body-2-font-size);
+  font-style: var(--text-body-2-font-style);
+  font-weight: var(--text-body-2-font-weight);
+  letter-spacing: var(--text-body-2-letter-spacing);
+  line-height: var(--text-body-2-line-height);
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.adminstrator-courses .action {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 24px;
+  justify-content: center;
+  position: relative;
+  width: 49px;
+}
+
+.adminstrator-courses .mdi-dots-vertical {
+  position: relative;
+  width: 24px;
+}
+
+.adminstrator-courses .chip-2 {
+  align-items: flex-start;
+  background-color: var(--colourssecondary-200);
+  border-radius: 4px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 4px 16px;
+  position: relative;
+}
+
+.adminstrator-courses .chip-3 {
+  align-items: flex-start;
+  background-color: var(--coloursgray-200);
+  border-radius: 4px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 4px 16px;
+  position: relative;
+}
+
+.adminstrator-courses .row-2 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 8px 0px;
+  position: relative;
+  width: 100%;
+}
