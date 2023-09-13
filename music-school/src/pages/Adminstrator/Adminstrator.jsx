@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import { Frame } from "../../components/Frame";
 import user from '../../assets/user.svg'
 import { StudentNavigation } from "../../components/StudentNavigation";
 import "./style.css";
+import { useNavigate } from 'react-router-dom';
 
 export const Adminstrator = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      navigate('/');
+    }
+  }, []);
+
   return (
     <div className="adminstrator">
       <StudentNavigation />

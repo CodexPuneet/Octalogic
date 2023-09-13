@@ -4,16 +4,34 @@ import plus from '../../assets/plus.svg'
 import more from '../../assets/more.svg'
 import { StudentNavigation } from "../../components/StudentNavigation";
 import "./style.css";
+import { useNavigate } from 'react-router-dom';
+
+import { Link } from "react-router-dom";
 
 export const AdminstratorCourses = () => {
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      navigate('/');
+    }
+  }, []);
+
   return (
     <div className="adminstrator-courses">
       <div className="overlap-group-wrapper">
         <div className="overlap-group">
           <div className="extended-FAB">
             <div className="state-layer">
-              <img className="mdi-plus" alt="Mdi plus" src={plus} />
+            <Link className="frame-2" to="/add">
+            <img className="mdi-plus" alt="Mdi plus" src={plus} />
               <div className="label-text">Add Course</div>
+            </Link>
+         
+            
             </div>
           </div>
           <div className="frame-3">
