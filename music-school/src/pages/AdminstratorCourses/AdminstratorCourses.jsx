@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import search from '../../assets/search.svg'
 import plus from '../../assets/plus.svg'
 import more from '../../assets/more.svg'
@@ -9,7 +9,8 @@ import data from '../../../data.json';
 
 export const AdminstratorCourses = () => {
   const navigate = useNavigate();
-
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredCourses, setFilteredCourses] = useState([]);
   useEffect(() => {
     
     const token = localStorage.getItem('token');
@@ -22,6 +23,17 @@ export const AdminstratorCourses = () => {
     navigate('/add');
   }
   const courses = data.courses || [];
+  useEffect(() => {
+    // Filter courses based on search query
+    const filtered = courses.filter((course) =>
+      Object.values(course)
+        .join(' ')
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
+    );
+    setFilteredCourses(filtered);
+  }, [searchQuery, courses]);
+
   return (
     <div className="adminstrator-courses">
       <div className="overlap-group-wrapper">
@@ -46,7 +58,14 @@ export const AdminstratorCourses = () => {
                     <div className="course-list">COURSE LIST</div>
                     <div className="outline-input">
                       <img className="mdi-magnify" alt="Mdi magnify" src={search} />
-                      <div className="text-wrapper-5">Search</div>
+                      <input
+                        type="text"
+                        className="outline-input"
+                        placeholder="Search"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      />
+                     
                     </div>
                   </div>
                   <div className="table">
@@ -65,31 +84,31 @@ export const AdminstratorCourses = () => {
                         <div className="text-wrapper-7">Actions</div>
                       </header>
                       <div className="body-2">
-                      {courses.map((course) => (
-              <div className="row" key={course.id}>
-                <div className="div-2">
-                  <div className="text-wrapper-6">{course.name}</div>
-                  <div className="text-wrapper-6">{course.description}</div>
-                  <div className="text-wrapper-6">{course.instructor}</div>
-                  <div className="text-wrapper-6">{course.instrument}</div>
-                  <div className="text-wrapper-6">{course.dayOfWeek}</div>
-                  <div className="text-wrapper-6">{course.numOfStudents}</div>
-                  <div className="text-wrapper-6">${course.price}</div>
-                  <div className="chip-wrapper">
-                    <div className={`chip-${course.status === 'Active' ? '1' : '2'}`}>
-                      <div className="text-wrapper-8">{course.status}</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="action">
-                  <img
-                    className="mdi-dots-vertical"
-                    alt="Mdi dots vertical"
-                    src={more}
-                  />
-                </div>
-              </div>
-            ))}
+            {filteredCourses.map((course) => (
+  <div className="row" key={course.id}>
+  <div className="div-2">
+    <div className="text-wrapper-6">{course.name}</div>
+    <div className="text-wrapper-6">{course.description}</div>
+    <div className="text-wrapper-6">{course.instructor}</div>
+    <div className="text-wrapper-6">{course.instrument}</div>
+    <div className="text-wrapper-6">{course.dayOfWeek}</div>
+    <div className="text-wrapper-6">{course.numOfStudents}</div>
+    <div className="text-wrapper-6">${course.price}</div>
+    <div className="chip-wrapper">
+      <div className={`chip-${course.status === 'Active' ? '1' : '2'}`}>
+        <div className="text-wrapper-8">{course.status}</div>
+      </div>
+    </div>
+  </div>
+  <div className="action">
+    <img
+      className="mdi-dots-vertical"
+      alt="Mdi dots vertical"
+      src={more}
+    />
+  </div>
+</div>
+))}
                      
                         <div className="row">
                           <div className="div-2">
