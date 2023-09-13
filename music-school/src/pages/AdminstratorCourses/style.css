@@ -26,6 +26,7 @@
   overflow: hidden;
   position: absolute;
   top: 619px;
+  z-index: 1; 
 }
 
 .adminstrator-courses .state-layer {

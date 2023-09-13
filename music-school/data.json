@@ -1,0 +1,111 @@
+{
+  "overview": {
+    "totalCourses": 15,
+    "totalAmountEarned": "$5000",
+    "bestPerformingCourse": "Guitar",
+    "worstPerformingCourse": "Flute"
+  },
+  "latestEnrollments": [
+    {
+      "enrollmentNumber": 1563124,
+      "studentName": "John Doe ",
+      "courseName": "Percussion",
+      "fees": "$120",
+      "enrollmentDate": "12-08-223"
+    },{
+      "enrollmentNumber": 1563126,
+      "studentName": "Michael Johnson",
+      "courseName": "Violin",
+      "fees": "$180",
+      "enrollmentDate": "10-20-223"
+   },{
+    "enrollmentNumber": 1563128,
+    "studentName": "Daniel Williams",
+    "courseName": "Saxophone",
+    "fees": "$200",
+    "enrollmentDate": "08-30-223"
+ }
+,{
+  "enrollmentNumber": 1563129,
+  "studentName": "Olivia Jones",
+  "courseName": "Trumpet",
+  "fees": "$170",
+  "enrollmentDate": "07-05-223"
+}
+   
+  ],
+  "bestStudents": [
+    {
+      "registrationNumber": 43422,
+      "firstName": "John",
+      "lastName": "Dove",
+      "courseNumber": 3,
+      "totalFees": "$300",
+      "registrationDate": "01-6-2023"
+    },{
+      "registrationNumber": 43424,
+      "firstName": "Michael",
+      "lastName": "Johnson",
+      "courseNumber": 2,
+      "totalFees": "$250",
+      "registrationDate": "03-10-2023"
+   },{
+    "registrationNumber": 43423,
+    "firstName": "Sarah",
+    "lastName": "Smith",
+    "courseNumber": 1,
+    "totalFees": "$200",
+    "registrationDate": "02-15-2023"
+ },{
+  "registrationNumber": 43425,
+  "firstName": "Emily",
+  "lastName": "Brown",
+  "courseNumber": 4,
+  "totalFees": "$350",
+  "registrationDate": "04-21-2023"
+},{
+  "registrationNumber": 43426,
+  "firstName": "Daniel",
+  "lastName": "Williams",
+  "courseNumber": 1,
+  "totalFees": "$200",
+  "registrationDate": "05-03-2023"
+}
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "Classical Guitar",
+      "description": "Guitar classes for...",
+      "instructor": "Ms. Jane Doe",
+      "instrument": "Guitar",
+      "dayOfWeek": "Wednesday",
+      "numStudents": 26,
+      "price": 60,
+      "status": "Active"
+    },
+    
+    {
+      "id": 1694637214383,
+      "name": "Harry Potter",
+      "description": "Musical",
+      "instructor": "Octa",
+      "instrument": "Piano",
+      "dayOfWeek": "5",
+      "price": "322",
+      "numOfStudents": "34",
+      "status": "Active"
+    },
+    {
+      "id": 1694637358539,
+      "name": "Raj",
+      "description": "Musical",
+      "instructor": "Octa",
+      "instrument": "Piano",
+      "dayOfWeek": "3",
+      "price": "3321",
+      "numOfStudents": "34",
+      "status": "Active"
+    }
+  ]
+}

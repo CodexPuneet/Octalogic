@@ -4,10 +4,18 @@ import user from '../../assets/user.svg'
 import { StudentNavigation } from "../../components/StudentNavigation";
 import "./style.css";
 import { useNavigate } from 'react-router-dom';
+import data from '../../../data.json';
 
 export const Adminstrator = () => {
   const navigate = useNavigate();
-
+  const [overviewData, setOverviewData] = React.useState({
+    totalCourses: 0,
+    totalAmountEarned: "$0",
+    bestPerformingCourse: "",
+    worstPerformingCourse: "",
+  });
+  const [latestEnrollments, setLatestEnrollments] = React.useState([]);
+  const [bestStudents, setBestStudents] = React.useState([]);
   useEffect(() => {
     
     const token = localStorage.getItem('token');
@@ -16,7 +24,20 @@ export const Adminstrator = () => {
       navigate('/');
     }
   }, []);
-
+  useEffect(() => {
+    setOverviewData({
+      totalCourses: data.overview.totalCourses,
+      totalAmountEarned: data.overview.totalAmountEarned,
+      bestPerformingCourse: data.overview.bestPerformingCourse,
+      worstPerformingCourse: data.overview.worstPerformingCourse,
+    });
+  
+    // Fetch latest enrollments data
+    setLatestEnrollments(data.latestEnrollments);
+  
+    // Fetch best students data
+    setBestStudents(data.bestStudents);
+  }, []);
   return (
     <div className="adminstrator">
       <StudentNavigation />
@@ -29,25 +50,25 @@ export const Adminstrator = () => {
           <Frame
             className="frame-20"
             icBaselinePeople={user}
-            text="12"
+            text={overviewData.totalCourses}
             text1="total number of courses"
           />
           <Frame
             className="frame-20"
             icBaselinePeople={user}
-            text="$2000"
+            text={overviewData.totalAmountEarned}
             text1="total amount earned"
           />
           <Frame
             className="frame-20"
             icBaselinePeople={user}
-            text="Guitar"
+            text={overviewData.bestPerformingCourse}
             text1="best performing course"
           />
           <Frame
             className="frame-20"
             icBaselinePeople={user}
-            text="Flute"
+            text={overviewData.worstPerformingCourse}
             text1="worst performing course"
           />
         </div>
@@ -66,20 +87,15 @@ export const Adminstrator = () => {
                 <div className="text-wrapper-8">Enr. Date</div>
               </div>
               <div className="body">
-                <div className="row">
-                  <div className="text-wrapper-9">1563124</div>
-                  <div className="text-wrapper-9">John Doe</div>
-                  <div className="text-wrapper-9">Percussion</div>
-                  <div className="text-wrapper-9">$120</div>
-                  <div className="text-wrapper-9">12-08-223</div>
-                </div>
-                <div className="row">
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                </div>
+              {latestEnrollments.map((enrollment) => (
+        <div className="row" key={enrollment.enrollmentNumber}>
+          <div className="text-wrapper-9">{enrollment.enrollmentNumber}</div>
+          <div className="text-wrapper-9">{enrollment.studentName}</div>
+          <div className="text-wrapper-9">{enrollment.courseName}</div>
+          <div className="text-wrapper-9">{enrollment.fees}</div>
+          <div className="text-wrapper-9">{enrollment.enrollmentDate}</div>
+        </div>
+      ))}
                 <div className="row">
                   <div className="text-wrapper-9">column</div>
                   <div className="text-wrapper-9">column</div>
@@ -87,20 +103,7 @@ export const Adminstrator = () => {
                   <div className="text-wrapper-9">column</div>
                   <div className="text-wrapper-9">column</div>
                 </div>
-                <div className="row">
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                </div>
-                <div className="row">
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                </div>
+              
               </div>
             </div>
           </div>
@@ -121,46 +124,18 @@ export const Adminstrator = () => {
                 <div className="text-wrapper-8">Reg. Date</div>
               </div>
               <div className="body">
-                <div className="row">
-                  <div className="text-wrapper-9">43422</div>
-                  <div className="text-wrapper-9">John</div>
-                  <div className="text-wrapper-9">Doe</div>
-                  <div className="text-wrapper-9">3</div>
-                  <div className="text-wrapper-9">$300</div>
-                  <div className="text-wrapper-9">01-6-2023</div>
-                </div>
-                <div className="row">
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                </div>
-                <div className="row">
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                </div>
-                <div className="row">
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                </div>
-                <div className="row">
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                  <div className="text-wrapper-9">column</div>
-                </div>
+              {bestStudents.map((student, index) => (
+          <div className="row" key={index}>
+            <div className="text-wrapper-9">{student.registrationNumber}</div>
+            <div className="text-wrapper-9">{student.firstName}</div>
+            <div className="text-wrapper-9">{student.lastName}</div>
+            <div className="text-wrapper-9">{student.courseNumber}</div>
+            <div className="text-wrapper-9">{student.totalFees}</div>
+            <div className="text-wrapper-9">{student.registrationDate}</div>
+          </div>
+        ))}
+               
+              
               </div>
             </div>
           </div>

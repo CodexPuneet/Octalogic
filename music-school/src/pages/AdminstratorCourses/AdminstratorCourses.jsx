@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import search from '../../assets/search.svg'
 import plus from '../../assets/plus.svg'
 import more from '../../assets/more.svg'
 import { StudentNavigation } from "../../components/StudentNavigation";
-import "./style.css";
 import { useNavigate } from 'react-router-dom';
-
-import { Link } from "react-router-dom";
+import "./style.css";
+import data from '../../../data.json';
 
 export const AdminstratorCourses = () => {
   const navigate = useNavigate();
 
-  React.useEffect(() => {
+  useEffect(() => {
     
     const token = localStorage.getItem('token');
 
@@ -19,27 +18,28 @@ export const AdminstratorCourses = () => {
       navigate('/');
     }
   }, []);
-
+  const handleChange=()=>{
+    navigate('/add');
+  }
+  const courses = data.courses || [];
   return (
     <div className="adminstrator-courses">
       <div className="overlap-group-wrapper">
+
+    
         <div className="overlap-group">
-          <div className="extended-FAB">
+          <button onClick={()=>handleChange()}  className="extended-FAB" >
             <div className="state-layer">
-            <Link className="frame-2" to="/add">
-            <img className="mdi-plus" alt="Mdi plus" src={plus} />
-              <div className="label-text">Add Course</div>
-            </Link>
-         
-            
+              <img alt="Mdi plus" src={plus} />
+              <div className="label-text" >Add Course</div>
             </div>
-          </div>
+          </button>
           <div className="frame-3">
             <StudentNavigation />
             <div className="body">
               <div className="frame-4">
                 <div className="div-wrapper">
-                  <div className="text-wrapper-4">Courses</div>
+                  <div className="text-wrapper-4" >Courses</div>
                 </div>
                 <div className="frame-5">
                   <div className="frame-6">
@@ -58,59 +58,39 @@ export const AdminstratorCourses = () => {
                           <div className="text-wrapper-6">Instructor</div>
                           <div className="text-wrapper-6">Instrument</div>
                           <div className="text-wrapper-6">Day of Week</div>
-                          <div className="text-wrapper-6"># of Students</div>
+                          <div className="text-wrapper-6">No. of Students</div>
                           <div className="text-wrapper-6">Price</div>
                           <div className="text-wrapper-6">Status</div>
                         </div>
                         <div className="text-wrapper-7">Actions</div>
                       </header>
                       <div className="body-2">
-                        <div className="row">
-                          <div className="div-2">
-                            <div className="text-wrapper-6">Classical Guitar</div>
-                            <div className="text-wrapper-6">Guitar classes for...</div>
-                            <div className="text-wrapper-6">Ms. Jane Doe</div>
-                            <div className="text-wrapper-6">Guitar</div>
-                            <div className="text-wrapper-6">Wednesday</div>
-                            <div className="text-wrapper-6">26</div>
-                            <div className="text-wrapper-6">$60</div>
-                            <div className="chip-wrapper">
-                              <div className="chip">
-                                <div className="text-wrapper-8">Active</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="action">
-                            <img
-                              className="mdi-dots-vertical"
-                              alt="Mdi dots vertical"
-                              src={more}
-                            />
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="div-2">
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="chip-wrapper">
-                              <div className="chip">
-                                <div className="text-wrapper-8">Active</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="action">
-                            <img
-                              className="mdi-dots-vertical"
-                              alt="Mdi dots vertical"
-                              src={more}
-                            />
-                          </div>
-                        </div>
+                      {courses.map((course) => (
+              <div className="row" key={course.id}>
+                <div className="div-2">
+                  <div className="text-wrapper-6">{course.name}</div>
+                  <div className="text-wrapper-6">{course.description}</div>
+                  <div className="text-wrapper-6">{course.instructor}</div>
+                  <div className="text-wrapper-6">{course.instrument}</div>
+                  <div className="text-wrapper-6">{course.dayOfWeek}</div>
+                  <div className="text-wrapper-6">{course.numOfStudents}</div>
+                  <div className="text-wrapper-6">${course.price}</div>
+                  <div className="chip-wrapper">
+                    <div className={`chip-${course.status === 'Active' ? '1' : '2'}`}>
+                      <div className="text-wrapper-8">{course.status}</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="action">
+                  <img
+                    className="mdi-dots-vertical"
+                    alt="Mdi dots vertical"
+                    src={more}
+                  />
+                </div>
+              </div>
+            ))}
+                     
                         <div className="row">
                           <div className="div-2">
                             <div className="text-wrapper-6">column</div>
@@ -134,76 +114,8 @@ export const AdminstratorCourses = () => {
                             />
                           </div>
                         </div>
+                      
                         <div className="row">
-                          <div className="div-2">
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="chip-wrapper">
-                              <div className="chip-2">
-                                <div className="text-wrapper-8">Closed</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="action">
-                            <img
-                              className="mdi-dots-vertical"
-                              alt="Mdi dots vertical"
-                              src={more}
-                            />
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="div-2">
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="chip-wrapper">
-                              <div className="chip-3">
-                                <div className="text-wrapper-8">Archived</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="action">
-                            <img
-                              className="mdi-dots-vertical"
-                              alt="Mdi dots vertical"
-                              src={more}
-                            />
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="div-2">
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="text-wrapper-6">column</div>
-                            <div className="chip-wrapper">
-                              <div className="chip-3">
-                                <div className="text-wrapper-8">Archived</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="action">
-                            <img
-                              className="mdi-dots-vertical"
-                              alt="Mdi dots vertical"
-                              src={more}
-                            />
-                          </div>
-                        </div>
-                        <div className="row-2">
                           <div className="div-2">
                             <div className="text-wrapper-6">column</div>
                             <div className="text-wrapper-6">column</div>
